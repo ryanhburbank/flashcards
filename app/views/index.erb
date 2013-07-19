@@ -1,5 +1,5 @@
 This will be the landing page where the user can log in or sign up
-<form class='login-form' action='' method='post'>
+<form class='login-form' action="/user/:id" method='post'>
   <label for='email'>
     Email:<br/>
     <input id='email' type='text' name='#' required>
@@ -13,4 +13,6 @@ This will be the landing page where the user can log in or sign up
   <input type='submit' value='Sign In' required>
 </form>
 
-<p>New User? <a href="/new">Sign Up!</a></p>
+<p>New User? <a href="/user/register">Sign Up!</a></p>
+
+<a href="#{<% erb :'/user/profile' %>}">Test</a>
