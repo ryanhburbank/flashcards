@@ -21,8 +21,10 @@
   <title></title>
 </head>
 <body>
-<div class="container">
+<section class="container">
+  <%= erb :'/partials/_header' %>
   <%= yield %>
-</div>
+  <%= erb :'/partials/_footer' %>
+</section>
 </body>
 </html>

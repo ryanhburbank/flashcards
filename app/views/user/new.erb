@@ -1,0 +1,34 @@
+<p>This will be the user signup form
+On signup success it will go to the user portal
+On signup fail, it will render again with an error message</p>
+<section id="register-user" class="content-wrapper">
+  <form class='signup-form' action='/user' method='post'>
+    
+    <label for='first-name'>
+      First Name<br>
+    <input id='first-name' type="text" placeholder="First Name" required>
+    </label>
+
+    <label for='last-name'>
+      Last Name<br>
+    <input id='last-name' type="text" placeholder="Last Name" required>
+    </label>
+
+    <label for='email'>
+      Email:<br/>
+      <input id='email' type='email' name='params' placeholder="you@example.com" title="Provide an email address" required>
+    </label>
+
+    <label for='password'>
+      Password:<br/>
+      <input id='password' type='password' name='#' required>
+    </label>
+
+     <label for='password-confirm'>
+      Confirm Password:<br/>
+      <input id='password-confirm' type='password' name='#' required>
+    </label>
+
+    <button class='btn' type='submit' value='Register'>Register</button>
+  </form>
+</section>
