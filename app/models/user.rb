@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :decks
+  has_many :rounds 
+  has_many :guesses
+
   include BCrypt
   # make sure the user table has a password_hash column
 
