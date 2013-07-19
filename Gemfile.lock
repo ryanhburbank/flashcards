@@ -20,6 +20,8 @@ GEM
     atomic (1.1.10)
     backports (3.3.3)
     bcrypt-ruby (3.1.1)
+    bootstrap-sass (2.3.2.1)
+      sass (~> 3.2)
     builder (3.1.4)
     daemons (1.1.9)
     diff-lcs (1.2.4)
@@ -47,6 +49,7 @@ GEM
     rspec-expectations (2.14.0)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.1)
+    sass (3.2.9)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.3)
@@ -60,6 +63,8 @@ GEM
       rack-test
       sinatra (~> 1.4.2)
       tilt (~> 1.3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -76,6 +81,7 @@ DEPENDENCIES
   activerecord
   activesupport
   bcrypt-ruby
+  bootstrap-sass
   faker
   nokogiri
   pg
@@ -84,4 +90,5 @@ DEPENDENCIES
   shotgun
   sinatra
   sinatra-contrib
+  sinatra-flash
   thin

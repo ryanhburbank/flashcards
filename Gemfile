@@ -6,6 +6,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-flash'
 
 # Use Thin for our web server
 gem 'thin'
@@ -17,6 +18,8 @@ gem 'activerecord'
 
 gem 'rake'
 
+#boostrap gem
+gem 'bootstrap-sass'
 gem 'shotgun'
 gem 'bcrypt-ruby'
 gem 'nokogiri'
