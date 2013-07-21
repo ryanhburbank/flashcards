@@ -1,6 +1,9 @@
 <header>
+  <% if session[:id] %>
+  <a href="/user/logout"><button class='btn'>Logout</button></a>
+  <% end %>
   <nav class='navbar'>
     <a class='brand' href='/'>LOGO</a>
-    <button class='btn'>Logout</button>
+    
   </nav>
 </header>

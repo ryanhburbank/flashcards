@@ -1,4 +1,5 @@
 get '/deck/new' do
+  @current_user = current_user 
   erb :'/deck/new'
 end
 
