@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  has_many :guesses
+
   has_many :incorrect_answers
   belongs_to :deck
 

@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 
   has_many :decks
   has_many :rounds
-  has_many :guesses
 
 
   validates :first_name, presence: { message: "Must enter a first name" }, length: { in: 2..25 }
