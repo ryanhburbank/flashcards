@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: { message: "Must enter a first name" }, length: { in: 2..25 }
   validates :last_name, presence: { message: "Must enter a last name" }, length: { in: 2..25 }
 
-  validates :username, presence: { message: "Must have an username" }, uniqueness: { message: "Username is already taken." }, case_sensitive: false
+  validates :user_name, presence: { message: "Must have an username" }, uniqueness: { message: "Username is already taken." }, case_sensitive: false
 
   validates :email_confirmation, presence: { message: "You must re-enter your email address."}
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "%{value} is not a valid email address." }, confirmation: { message: "Your email and re-entered email must match."}
