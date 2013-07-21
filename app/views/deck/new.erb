@@ -6,7 +6,7 @@
     
   <!-- wasn't sure of routing on this...might need changed -->
 
-    <label for='deck'>
+  <!--   <label for='deck'>
       Deck<br>
       <input id='deck' type="text" name="deck[title]" required>
     </label>
@@ -19,13 +19,34 @@
     <label for='answer'>
       Answer<br>
       <textarea id="answer" rows='10' cols='40' name="card[answer]"></textarea><br/>
-      </label>
+      </label> -->
+
+  <label for='question'>
+    Question<br/>
+    <select id="question" name="question_dropdown">
+      <% @decks.each do |deck| %>
+        <% deck.cards.each do |card| %>
+          <option value="card[question]"><%= card.question %></option>
+          <% @answer = card.answer %>
+        <% end %>
+      <% end %>
+    </select>
+    <button class="btn" type="submit">Update</button>
+  </label>
+
+<label for='answer'>
+  Answer<br/>
+  <textarea id="answer" rows='10' cols='60' name="card[answer]"><%= @answer %></textarea><br/>
+</label>    
 
     <button class="btn" type="submit">Add</button>
   </form>
 
   <!-- not exactly sure how to map the button to save the deck (below) yet -->
-  <button class="btn" type="submit">Save Deck</button>
+  
+  <button class="btn">Save Deck</button>
+  <button class="btn">Delete Deck</button>
+
 </div>
 
 <div class="card-list">
