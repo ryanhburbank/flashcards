@@ -1,7 +1,8 @@
 class IncorrectAnswer < ActiveRecord::Base
-  # Remember to create a migration!
   belongs_to :round
   belongs_to :card
 
-  validates :answer, presence: true
+  validates :attempt, presence: true
+  validates_associated :card
+  validates_associated :round
 end

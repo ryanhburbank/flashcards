@@ -19,7 +19,7 @@ GEM
     arel (4.0.0)
     atomic (1.1.10)
     backports (3.3.3)
-    bcrypt-ruby (3.1.1)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     builder (3.1.4)
@@ -80,7 +80,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
-  bcrypt-ruby
+  bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
   faker
   nokogiri

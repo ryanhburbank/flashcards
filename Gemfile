@@ -22,7 +22,7 @@ gem 'rake'
 #boostrap gem
 gem 'bootstrap-sass'
 gem 'shotgun'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'nokogiri'
 
 # gem 'carrierwave'

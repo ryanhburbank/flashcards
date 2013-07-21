@@ -1,9 +1,9 @@
 class CreateGuesses < ActiveRecord::Migration
   def change
     create_table :guesses do |t|
-      t.string :query
-      t.belongs_to :user, polymorphic: true
+      t.belongs_to :round
       t.belongs_to :card
+      t.string     :attempt
       t.timestamps
     end
   end

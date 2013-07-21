@@ -1,34 +1,26 @@
 class User < ActiveRecord::Base
   include BCrypt
+  has_secure_password
 
   has_many :decks
   has_many :rounds
   has_many :guesses
 
 
-  validates :username, :password, presence: true
-  validates :username, uniqueness: true
-  validates :email, uniqueness: true, presence: true, format: { with: /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i }
+  validates :first_name, presence: { message: "Must enter a first name" }, length: { in: 2..25 }
+  validates :last_name, presence: { message: "Must enter a last name" }, length: { in: 2..25 }
 
-  def password
-    @password ||= Password.new(password_hash)
-  end
+  validates :username, presence: { message: "Must have an username" }, uniqueness: { message: "Username is already taken." }, case_sensitive: false
 
-  def password=(pass)
-    @password = Password.create(pass)
-    self.password_hash = @password
-  end
+  validates :email_confirmation, presence: { message: "You must re-enter your email address."}
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "%{value} is not a valid email address." }, confirmation: { message: "Your email and re-entered email must match."}
 
-  def self.create(params={})
-    @user = User.new(params)
-    @user.password = params[:password]
-    @user.save
-    @user
-  end
+  validates :password_confirmation, presence: { message: "You must re-enter your password. " }
+  validates :password, presence: { message: "Password cannot be empty" },
+                       confirmation: { message: "Your password and re-entered must match."},
+                       length: {
+                                 in: 6..15,
+                                 too_short: "Password is too short, must be longer than %{value} characters long",
+                                 too_long: "Password is too long, must be shorter than %{value} characters long" }
 
-  def self.authenticate(params)
-    # can be changed to find user by anything unique, e.g. email or username
-    user = User.find_by_username(params[:name])
-    (user && user.password == params[:password]) ? user : nil
-  end
 end

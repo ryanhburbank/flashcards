@@ -4,7 +4,7 @@ class CreateRounds < ActiveRecord::Migration
       t.belongs_to :user
       t.belongs_to :deck
 
-      t.timestamps 
-    end  
+      t.timestamps
+    end
   end
 end

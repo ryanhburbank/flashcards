@@ -1,6 +1,11 @@
 class Guess < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :round
   belongs_to :card
 
-  validate :query, :user_id, :card_id, presence: true
+  validates :query, :user, :card, presence: true
+  validates :attempt, presence: true, length: {
+                                                in: 1..255,
+                                                too_short: "Your answer is too short!",
+                                                too_long: "Your answer is too long, must be shorter than 350 characters!"
+                                               }
 end
