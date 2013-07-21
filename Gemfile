@@ -12,6 +12,7 @@ gem 'sinatra-flash'
 gem 'thin'
 
 gem 'faker'
+gem 'urban'
 
 gem 'activesupport'
 gem 'activerecord'

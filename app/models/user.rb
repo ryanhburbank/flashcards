@@ -1,16 +1,14 @@
 class User < ActiveRecord::Base
-  has_many :decks
-  has_many :rounds 
-  has_many :guesses
-
   include BCrypt
 
-  has_many :rounds
   has_many :decks
+  has_many :rounds
+  has_many :guesses
+
 
   validates :username, :password, presence: true
   validates :username, uniqueness: true
-  validates :email, presence: true, format: { with: /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i}
+  validates :email, uniqueness: true, presence: true, format: { with: /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i }
 
   def password
     @password ||= Password.new(password_hash)
