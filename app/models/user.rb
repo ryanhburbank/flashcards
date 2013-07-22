@@ -1,4 +1,4 @@
-CARD_COUNT_PER_ROUND = 5
+
 class User < ActiveRecord::Base
   include BCrypt
   has_secure_password

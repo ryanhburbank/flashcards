@@ -1,10 +1,12 @@
 <h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1>
 <div class="statistics">
-  <p>Last Round Correct Guesses: <%= @correct_guesses_last_round %></p>
-  <p>Last Round Incorrect Guesses: <%= @incorrect_guesses_last_round %></p>
-  <p>Total Correct Guesses: <%= @correct %></p>
-  <p>Total Incorrect Guesses: <%= @incorrect %></p>
-  <p>Total Percentage Correct: <%= @percentage %>%</p>
+  <% if @current_user.rounds.count > 0 %>
+    <p>Last Round Correct Guesses: <%= @correct_guesses_last_round %></p>
+    <p>Last Round Incorrect Guesses: <%= @incorrect_guesses_last_round %></p>
+    <p>Total Correct Guesses: <%= @correct %></p>
+    <p>Total Incorrect Guesses: <%= @incorrect %></p>
+    <p>Total Percentage Correct: <%= @percentage %>%</p>
+  <% end %>
 </div>
 
 <div class="round-list">

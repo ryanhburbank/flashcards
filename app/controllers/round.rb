@@ -32,7 +32,7 @@ end
 get '/deck/:id' do
   current_deck = Deck.find(params[:id])
   session[:card_ids] = []
-  current_deck.cards.sample(CARD_COUNT_PER_ROUND).each do |card|
+  current_deck.cards.sample(5).each do |card|
     session[:card_ids] << card.id
   end
   p session[:card_ids]
