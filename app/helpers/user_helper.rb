@@ -10,3 +10,7 @@ def find_stats(current_user)
   @incorrect_guesses_last_round = current_user.incorrect_guesses_last_round
   @percentage = current_user.total_percentage
 end
+
+def logged_in?
+  !current_user.nil?
+end

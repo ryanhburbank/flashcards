@@ -9,6 +9,20 @@
   <% end %>
 </div>
 
+<div id="my-deck">
+  <h3>My Decks</h3>
+  <ul>
+  <% @current_user.decks.each do |deck| %>
+    <li><%= deck.title %></li>
+  <% end %>
+  </ul>
+</div>
+
+
+<div class="create-deck">
+  <a href="/deck/new">Create a Deck</a>
+</div>
+
 <div class="round-list">
   <p>Pick A Deck To Start A Round</p>
   <ul>

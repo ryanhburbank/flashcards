@@ -25,7 +25,6 @@ get '/deck/update/:deck' do
   erb :'/deck/update'
 end
 
-
 get '/deck/new/:question' do
   erb :'/deck/new'
 end  

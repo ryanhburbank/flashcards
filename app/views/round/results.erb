@@ -1,7 +1,7 @@
 <% all_guesses.each do |guess|  %>
-<p>Question:<%= guess.card.question %></p>
-<p>Correct Answer:<%= guess.card.answer %></p>
-<p>Your Guess:<%= guess.attempt %></p><br/>
+  <p>Question:<%= guess.card.question %></p>
+  <p>Correct Answer:<%= guess.card.answer %></p>
+  <p>Your Guess:<%= guess.attempt %></p>
 <% end %>
 
-<a href="/user/portal"><button class="btn">Back to Portal</button></a>
+<a href="/user/portal"><button>Back to Portal</button></a>
