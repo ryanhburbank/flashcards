@@ -17,15 +17,11 @@ header {
   display: inline-block;
 }
 
-header button {
-  padding: .5em;
-  margin: 1% 5% 0 0;
-}
-
-.container, .content-wrapper {
+.content-wrapper {
   width: 80%;
+  height: 400px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 25px;
   background-color: #F7F7F7;
 }
 
@@ -34,13 +30,16 @@ header button {
   width: 80%;
 }
 
-.content-wrapper {
-  height: 400px;
-}
-
 .login-form {
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
+  min-width:200px;
+  max-width:400px;
+}
+
+.portal {
+  background-color: #F7F7F7;
+  padding: 25px;
 }
   
 .register {
@@ -48,34 +47,30 @@ header button {
   margin-right: 25%;
 }
 
-
 .statistics {
   margin-top: 1%;
 }
 
 .alert {
   height: 3%;
-  padding-bottom: 20px;
+  padding: 0 0 20px;
 }
 
 footer{
   display: none;
 }
 
-.end-round {
-
-}
-
-.round-list ul {
-  width: 80%;
-  margin: 0 auto;
-}
 /* ================================
 ==             Lists             ==
 =================================*/
 
 ul {
   padding: 0;
+}
+
+.round-list ul {
+  width: 80%;
+  margin: 0 auto;
 }
 
 li {
@@ -88,11 +83,6 @@ li {
   color: #F7F7F7;
 }
 
-li.create-deck {
-    background-color: #E14F44;
-  color: #333;
-}
-
 li a, li a:visited{
   color: #F7F7F7;
 }
@@ -102,60 +92,70 @@ li:hover, li:hover a{
   color: #F7F7F7;
 }
 
+li.create-deck {
+  background-color: #E14F44;
+  color: #333;
+}
+
 /* ================================
-==             Forms             ==
+==        Forms & Buttons        ==
 =================================*/
 
 label {
-  display: inline-block;
-  padding: .5em;
-  width: 100%;
   margin: 0 auto;
+  width: 100%;
 }
 
 input {
-  display: inline-block;
-  padding: .2em;
-  margin: 0 auto;
+  margin: 5px auto;
+}
+
+input:focus, 
+textarea:focus {
+  outline: none;
 }
 
 input[type='text'], 
 input[type='email'], 
-input[type='passowrd'] {
-  width: 100%;
-  min-width:200px;
-  max-width:400px;
+input[type='password'] {
+  width: 98%;
 }
 
 input[type='submit'], button {
   background-color: #333;
-  color: #F7F7F7;
   border: 0;
-  margin-left: .5em;
-  padding: .25em .4em .25em .4em;
+  color: #F7F7F7;
+  float: right;
+  padding: 10px;
+}
+
+header button {
+  padding: .5em;
+  margin: 1% 5% 0 0;
 }
 
 /* ================================
 ==             Table             ==
 =================================*/
+
+table {
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 2em 1em;
+}
+
 .statistics table td {
   margin: 10px;
 }
 
-table {
-        margin: 0 auto;
-        border-collapse: separate;
-        border-spacing: 2em 1em;
-      }
-
 .stat {
-  background-color: green;
+  background-color: #333;
+  color: #f7f7f7;
+  font-weight: bold;
   padding: .5em;
   text-align: center;
-  font-weight: bold;
-  color: #f7f7f7;
-  background-color: #333;
 }
+
 /* ================================
 ==             Fonts             ==
 =================================*/
@@ -164,15 +164,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-.alert p{
-  color: #333;
-}
-
-header h2 {
-  margin: 0;
-}
-
-a, p {
+a, 
+a:visited, 
+p,
+.alert p {
   color: #333;
 }
 
@@ -184,14 +179,11 @@ a:hover {
   color: #E14F44;
 }
 
-a:visited {
-  color: #333;
-}
-
 ::selection {
   background-color: #E14F44;
   color: #F7F7F7;
 }
+
 /* ================================
 ==        Helper Classes         ==
 =================================*/
