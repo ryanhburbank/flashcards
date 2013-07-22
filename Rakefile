@@ -92,12 +92,6 @@ namespace :db do
   end
 
   desc "Drop the database at #{DB_NAME}"
-  task :dubstep do
-    puts "WUB WUB WUB WUB\nDropping the database #{DB_NAME}..."
-    system("dropdb #{DB_NAME}")
-  end
-
-  desc "Drop the database at #{DB_NAME}"
   task :drop do
     puts "Dropping #{DB_NAME}..."
     system("dropdb #{DB_NAME}")
@@ -118,12 +112,12 @@ namespace :db do
   end
 
   desc "Drop, create, migrate and seed the database"
-  task :fuckit => [:dubstep, :create, :migrate, :seed] do
+  task :rebuild => [:drop, :create, :migrate, :seed] do
     puts "Reset complete!"
   end
 
   desc "Create, migrate and seed the database"
-  task :yolo => [:create, :migrate, :seed] do
+  task :build => [:create, :migrate, :seed] do
     puts "Setup complete!"
   end
 
@@ -141,9 +135,4 @@ end
 desc 'Start IRB with application environment loaded'
 task "console" do
   exec "irb -r./config/environment"
-end
-
-desc "Putain bordel de merde, fils de pute va te faire foutre"
-task "mike" do
-  require APP_ROOT.join('config','helper.rb')
 end

@@ -10,7 +10,7 @@ post '/user/register' do
   @current_user.save
   if @current_user.id
     session[:id] = @current_user.id
-    redirect to('/user/portal')
+    redirect '/user/portal'
   else
     "#{@current_user.errors.each {|error| flash[:error] = error }}"
     redirect to ('/user/register')
@@ -23,23 +23,28 @@ end
 
 post '/user/login' do
   @current_user = User.find_by_email(params[:user][:email])
+  
   if @current_user.authenticate(params[:user][:password])
     session[:id]= @current_user.id
-    redirect to('/user/portal')
+    redirect '/user/portal'
   else
     flash[:error] = "Login failed! Please try again!"
-    redirect to('/')
+
+    redirect '/'
   end
 end
 
 get '/user/logout' do
   session[:id] = nil
-  redirect to ("/")
+
+  redirect '/'
 end
 
 get '/user/portal' do
   @decks = Deck.all
-  @current_user = User.find_by_id(session[:id])
+  
+  current_user
+
   if @current_user.rounds.count > 0
     @correct = @current_user.correct_guesses
     @incorrect = @current_user.incorrect_guesses
@@ -47,10 +52,11 @@ get '/user/portal' do
     @incorrect_guesses_last_round = @current_user.incorrect_guesses_last_round
     @percentage = @current_user.total_percentage
   end
+
   if @current_user
     erb :'/user/portal'
   else 
-    redirect to('/')
+    redirect '/'
   end
 end
 
