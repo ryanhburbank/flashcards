@@ -1,9 +1,14 @@
 
-<section id="lading-page" class="content-wrapper">
-  <form class='login-form' action="/user/login" method='post'>
+<section id='lading-page' class='content-wrapper'>
+  
+  <div class='error alert'>
+    <%= flash[:error] %>  
+  </div>
+
+  <form class='login-form' action='/user/login' method='POST'>
     <label for='email'>
       Email:<br/>
-      <input id='email' type='text' name='email' required>
+      <input id='email' type='email' name='email' required>
     </label>
 
     <label for='password'>
@@ -15,7 +20,6 @@
   </form>
 <section>
 
-<p>New User? <a href="/user/register">Sign Up!</a></p>
+<p>New User? <a href='/user/register'>Sign Up!</a></p>
 
 
-<%= flash[:error] %>

@@ -1,5 +1,5 @@
 get '/user/register' do
-  erb :'/user/new'
+  erb :'/user/register'
 end
 
 post '/user/register' do
