@@ -24,6 +24,16 @@ class User < ActiveRecord::Base
                                  too_short: "Password is too short, must be longer than %{value} characters long",
                                  too_long: "Password is too long, must be shorter than %{value} characters long" }
 
+  def self.authenticate(email, password)
+    @user = User.find_by_email(email)
+    if @user && @user.password == password
+      return @user
+    else
+      nil
+    end
+  end
+
+
   def correct_guesses
   @correct = 0
     self.rounds.each do |round|

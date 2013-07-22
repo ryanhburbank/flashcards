@@ -1,4 +1,5 @@
-enable :sessions
+
+register Sinatra::Flash
 
 get '/user/register' do
   erb :'/user/new'
@@ -13,7 +14,7 @@ post '/user/register' do
     redirect '/user/portal'
   else
     "#{@current_user.errors.each {|error| flash[:error] = error }}"
-    redirect to ('/user/register')
+    redirect '/user/register' 
   end
 end
 
@@ -22,10 +23,10 @@ get '/user/profile' do
 end
 
 post '/user/login' do
-  @current_user = User.find_by_email(params[:user][:email])
-  
-  if @current_user.authenticate(params[:user][:password])
+  @current_user = User.authenticate(params[:email], params[:password])
+  if @current_user
     session[:id]= @current_user.id
+
     redirect '/user/portal'
   else
     flash[:error] = "Login failed! Please try again!"
@@ -45,13 +46,9 @@ get '/user/portal' do
   
   current_user
 
-  if @current_user.rounds.count > 0
-    @correct = @current_user.correct_guesses
-    @incorrect = @current_user.incorrect_guesses
-    @correct_guesses_last_round = @current_user.correct_guesses_last_round
-    @incorrect_guesses_last_round = @current_user.incorrect_guesses_last_round
-    @percentage = @current_user.total_percentage
-  end
+  find_stats(@current_user) if @current_user.rounds.count > 0
+    
+  
 
   if @current_user
     erb :'/user/portal'
