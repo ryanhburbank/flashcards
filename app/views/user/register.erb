@@ -1,0 +1,39 @@
+
+<section id="register-user" class="content-wrapper">
+
+  <%= flash[:error] %><br/>
+  <form class='signup-form' action='/user/register' method='post'>
+    
+    <label for='first-name'>
+      First Name<br>
+    <input id='first-name' type="text" placeholder="First Name" name="user[first_name]" required>
+    </label>
+
+    <label for='last-name'>
+      Last Name<br>
+    <input id='last-name' type="text" placeholder="Last Name" name="user[last_name]" required>
+    </label>
+
+    <label for='email'>
+      Email:<br/>
+      <input id='email' type='email' name='user[email]' placeholder="you@example.com" title="Provide an email address" required>
+    </label>
+
+    <label for='email-confirm'>
+      Confirm Email:<br/>
+      <input id='email_confirmation' type='email' name='user[email_confirmation]' placeholder="Confirm email address" required>
+    </label>
+
+    <label for='password'>
+      Password:<br/>
+      <input id='password' type='password' placeholder="Password" name='user[password]' required>
+    </label>
+
+     <label for='password-confirm'>
+      Confirm Password:<br/>
+      <input id='password_confirmation' type='password' placeholder="Confirm password" name="user[password_confirmation]" required>
+    </label>
+
+    <button class='btn' type='submit' value='Register'>Register</button>
+  </form>
+</section>
