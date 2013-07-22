@@ -14,8 +14,11 @@ shotgun
 ```
 ### Authors
 Jake Meyers (@jmyers0022)
+
 Brandon Baily (@dammitBrandon)
+
 Ryan Burbank (@ryanhburbank)
+
 Mark Backsmeier (@mbacksmeier)
 
 ### Contributions
