@@ -2,7 +2,7 @@
 <section id='lading-page' class='content-wrapper'>
   
   <div id='error' class='alert'>
-    <%= flash[:error] %>  
+    <p><%= flash[:error] %></p>
   </div>
 
   <form class='login-form' action='/user/login' method='POST'>
@@ -18,8 +18,10 @@
 
     <input type='submit' value='Sign In' required>
   </form>
+  <div class="register right">
+    <p>New User?<a href='/user/register'> Sign Up!</a></p>
+  </div>
 <section>
 
-<p>New User? <a href='/user/register'>Sign Up!</a></p>
 
 

@@ -1,13 +1,19 @@
-This will be the profile/edit page for a particular user
+<h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1>
 <section name='user-profile'>
-<ul>
-  <li>User Name</li>
-  <li>Email</li>
-  <li><a href="">Edit User</a></li>
-</ul>
+  <ul>
+    <li>User Name</li>
+    <li>Email</li>
+    <li><a href="">Edit User</a></li>
+  </ul>
+  <hr>
+  <ul name='deck-list'>
+    <% if @current_user.decks.nil? %>
+    <li> <p> You Have No Decks</p></li>
+    <% end %>
 
-<ul name='deck-list'>
-  <li>Deck goes here</li>
-</ul>
+    <% @current_user.decks.each do |deck| %>
+    <li><%= deck.title %></li>
+    <% end %>
+  </ul>
 </section>
 

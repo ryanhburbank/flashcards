@@ -21,7 +21,13 @@ post '/user/register' do
 end
 
 get '/user/profile' do
-  erb :'/user/profile'
+  current_user
+
+  if @current_user
+    erb :'/user/profile'
+  else
+    redirect '/'
+  end
 end
 
 post '/user/login' do

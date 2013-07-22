@@ -3,7 +3,9 @@
   <%= flash[:is_correct] %>
 </div>
 
-<a href="/user/portal"><button>The Deck is Too Hard!</button></a>
+<div class="right" id="end-round">
+  <a href="/user/portal"><button>I give up!</button></a>
+</div>
 
 <h1><%= current_card.deck.title %></h1>
 
