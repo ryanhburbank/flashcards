@@ -1,10 +1,21 @@
 This will be the user portal and main page for the app
-<section id="portal" class="conent-wrapper">
+#@current_user is the current user
+
+<!-- #portal should allow user to select deck, then either view it, edit it, delete it, or play a round with it -->
+<section id="portal" class="content-wrapper">
   <ul>
-    <li><a href="">Create Deck</a></li>
-    <li><a href="">Start Round</a></li>
-    <li><a href="/user/profile/<%=@user.id%>">Profile</a></li>
+    <li><a href="/deck/new">Create Deck</a></li>
+    <li><a href="/user/profile/<%=@current_user.id%>">Profile</a></li>
   </ul>
 </section>
+
+<div>
+  <p>Pick A Deck To Start A Round</p>
+  <ul>
+    <% @decks.each do |deck| %>
+      <li><a href="/deck/<%= deck.id %>"><%= deck.title %></a></li>
+    <% end %>
+  </ul>
+</div>
 
 

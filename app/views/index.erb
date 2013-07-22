@@ -1,14 +1,14 @@
 This will be the landing page where the user can log in or sign up
 <section id="lading-page" class="content-wrapper"
-  <form class='login-form' action="/user/:id" method='post'>
+  <form class='login-form' action="/user/login" method='post'>
     <label for='email'>
       Email:<br/>
-      <input id='email' type='text' name='#' required>
+      <input id='email' type='text' name='user[email]' required>
     </label>
 
     <label for='password'>
       Password:<br/>
-      <input id='password' type='password' name='#' required>
+      <input id='password' type='password' name='user[password]' required>
     </label>
 
     <input type='submit' value='Sign In' required>

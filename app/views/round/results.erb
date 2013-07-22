@@ -1,0 +1,5 @@
+<% all_guesses.each do |guess|  %>
+<p>Question:<%= guess.card.question %></p>
+<p>Correct Answer:<%= guess.card.answer %></p>
+<p>Your Guess:<%= guess.attempt %></p><br/>
+<% end %>
