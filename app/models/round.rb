@@ -1,6 +1,6 @@
 class Round < ActiveRecord::Base
 
-  belongs_to :user
+  #belongs_to :user, inverse_of: :rounds
   belongs_to :deck
   has_many :guesses
 

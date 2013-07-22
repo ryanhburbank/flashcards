@@ -1,9 +1,29 @@
 .container {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+/*  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;*/
 }
-th {
-  text-align: left;
+
+
+
+
+
+/* Forms */
+
+
+label {
+  display: inline-block;
+}
+
+input {
+  display: inline-block;
+}
+
+/* Index */
+
+
+/* Currently showing no footer*/
+footer  span{
+  display: none;
 }
