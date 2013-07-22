@@ -3,7 +3,6 @@ Flashcard Application
 
 A Sinatra based flashcard applications created during Week 4 of Dev Bootcamp Chicago. 
 
-
 ### Getting Started
 To run this application locally:
 ```ruby
@@ -12,14 +11,18 @@ bundle install
 rake db:create && rake db:migrate
 shotgun
 ```
+### Appearance
+
+![Alt text](/public/img/screenshot.png "Application Screenshot")
+
 ### Authors
-Jake Meyers (@jmyers0022)
+Jake Meyers (@jmyers0022)[https://github.com/jmyers0022]
 
-Brandon Baily (@dammitBrandon)
+Brandon Baily (@dammitBrandon)[https://github.com/dammitBrandon]
 
-Ryan Burbank (@ryanhburbank)
+Ryan Burbank (@ryanhburbank)[https://github.com/ryanhburbank]
 
-Mark Backsmeier (@mbacksmeier)
+Mark Backsmeier (@mbacksmeier)[https://github.com/mbacksmeier]
 
 ### Contributions
 This project is currently not accepting any pull requests for features, bugs, or patches; however, please feel free fork the repo and do as you wish.
