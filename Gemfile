@@ -1,9 +1,9 @@
-source :rubygems
+source :'https://rubygems.org'
 
 # PostgreSQL driver
 gem 'pg'
 
-# Sinatra driver
+# Sinatra drivers
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-flash'
@@ -19,15 +19,11 @@ gem 'activerecord'
 
 gem 'rake'
 
-#boostrap gem
-gem 'bootstrap-sass'
 gem 'shotgun'
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 gem 'nokogiri'
 
-# gem 'carrierwave'
-# gem "mini_magick"
-
-group :test do
+group :test, :development do
   gem 'rspec'
+  gem 'debugger'
 end
