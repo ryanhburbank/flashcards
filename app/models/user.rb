@@ -1,3 +1,4 @@
+CARD_COUNT_PER_ROUND = 5
 class User < ActiveRecord::Base
   include BCrypt
   has_secure_password
@@ -48,7 +49,7 @@ class User < ActiveRecord::Base
   end
 
   def total_percentage
-    (self.correct_guesses.to_f / self.rounds.count).round(2)
+    (self.correct_guesses.to_f / (self.incorrect_guesses + self.correct_guesses)).round(2)
   end
 end
 
