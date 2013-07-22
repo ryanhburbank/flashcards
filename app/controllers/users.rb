@@ -1,6 +1,5 @@
 enable :sessions
 
-
 get '/user/register' do
   erb :'/user/new'
 end
@@ -38,14 +37,15 @@ get '/user/logout' do
   redirect to ("/")
 end
 
-
-#put this in helpers, can be used in 
-
 get '/user/portal' do
   @decks = Deck.all
   @current_user = User.find_by_id(session[:id])
+  @correct = @current_user.correct_guesses
+  @incorrect = @current_user.incorrect_guesses
+  @correct_guesses_last_round = @current_user.correct_guesses_last_round
+  @incorrect_guesses_last_round = @current_user.incorrect_guesses_last_round
+  @percentage = @current_user.total_percentage
   if @current_user
-  # puts "current user at /:id #{@current_user}"
     erb :'/user/portal'
   else 
     redirect to('/')

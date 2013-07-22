@@ -1,12 +1,10 @@
 get '/deck/new' do
-<<<<<<< HEAD
   @decks = Deck.all
   erb :'/deck/new'
 end
 
 get '/deck/new/:question' do
   @question = Deck.find_by_question(params[:question])
-=======
   @current_user = current_user 
   erb :'/deck/new'
 end
@@ -29,8 +27,6 @@ end
 
 
 get '/deck/new/:question' do
- 
->>>>>>> 6ded8a4b1790e01e8408997ea2b1d7f25fda809e
   erb :'/deck/new'
 end  
 

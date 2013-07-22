@@ -1,15 +1,13 @@
-This will be the user portal and main page for the app
-#@current_user is the current user
+<h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1>
+<div class="statistics">
+  <p>Last Round Correct Guesses: <%= @correct_guesses_last_round %></p>
+  <p>Last Round Incorrect Guesses: <%= @incorrect_guesses_last_round %></p>
+  <p>Total Correct Guesses: <%= @correct %></p>
+  <p>Total Incorrect Guesses: <%= @incorrect %></p>
+  <p>Total Percentage Correct: <%= @percentage %>%</p>
+</div>
 
-<!-- #portal should allow user to select deck, then either view it, edit it, delete it, or play a round with it -->
-<section id="portal" class="content-wrapper">
-  <ul>
-    <li><a href="/deck/new">Create Deck</a></li>
-    <li><a href="/user/profile/<%=@current_user.id%>">Profile</a></li>
-  </ul>
-</section>
-
-<div>
+<div class="round-list">
   <p>Pick A Deck To Start A Round</p>
   <ul>
     <% @decks.each do |deck| %>
