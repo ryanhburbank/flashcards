@@ -1,3 +1,9 @@
+  <div id='flash' class='notice'>
+      <a class="close" data-dismiss="alert"></a>
+      <%= flash[:is_correct] %>
+    </div>
+  <a href="/user/portal"><button class='btn'>The Deck is Too Hard!</button></a>
+
 <h1><%= current_card.deck.title %></h1>
 <div class='card-container'>
   <p>Question:</p>
@@ -9,5 +15,4 @@
     </label>
     <button class="btn "type="submit">Submit</button>
   </form>
-  <a href="/user/portal">The Deck Is Too Hard!</a>
 </div>

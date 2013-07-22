@@ -18,8 +18,10 @@ post '/round/:id/card/guess' do
   guess = Guess.new(round_id: params[:id], card_id: session[:current_card_id], attempt: params[:attempt])
   
   if params[:attempt] == Card.find(session[:current_card_id]).answer
-    # flash[:success] = "You got it!"
+    flash[:is_correct] = "Correct!"
     guess.is_correct = true
+  else
+    flash[:is_correct] = "Wrong!"
   end
     guess.save
     redirect to("/round/#{params[:id]}/card/show")
