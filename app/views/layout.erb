@@ -11,10 +11,10 @@
     <title>A Flashcard Application</title>
   </head>
   <body>
+    <%= erb :'/partials/_header' %>
     <section class='container'>
-      <%= erb :'/partials/_header' %>
       <%= yield %>
-      <%= erb :'/partials/_footer' %>
     </section>
+      <%= erb :'/partials/_footer' %>
   </body>
 </html>
