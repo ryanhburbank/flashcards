@@ -33,7 +33,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def correct_guesses
   @correct = 0
     self.rounds.each do |round|
