@@ -4,6 +4,7 @@ class CreateGuesses < ActiveRecord::Migration
       t.belongs_to :round
       t.belongs_to :card
       t.string     :attempt
+      t.boolean    :is_correct, :default => false 
       t.timestamps
     end
   end

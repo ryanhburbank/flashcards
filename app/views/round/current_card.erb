@@ -1,0 +1,13 @@
+<h1><%= current_card.deck.title %></h1>
+<div class='card-container'>
+  <p>Question:</p>
+  <p><%= current_card.question %></p>
+  <form action="/round/<%= round_id %>/card/guess" method="POST"
+    <label for='answer'>
+      Answer<br>
+    <input id='answer' type="text" placeholder="Answer" name="attempt" required>
+    </label>
+    <button class="btn "type="submit">Submit</button>
+  </form>
+  <a href="/user/portal">The Deck Is Too Hard!</a>
+</div>

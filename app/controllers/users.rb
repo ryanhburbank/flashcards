@@ -42,12 +42,13 @@ end
 #put this in helpers, can be used in 
 
 get '/user/portal' do
+  @decks = Deck.all
   @current_user = User.find_by_id(session[:id])
   if @current_user
   # puts "current user at /:id #{@current_user}"
     erb :'/user/portal'
   else 
-    redirect to('/login')
+    redirect to('/')
   end
 end
 
