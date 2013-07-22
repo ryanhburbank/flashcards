@@ -1,5 +1,6 @@
 <h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1>
-<h4><a href="/user/profile">Profile</h4></a> | <h4> Something else</h4>
+<h4>|| <a href="/user/profile">Profile</a></h4>
+<br>
 <div class="statistics">
   <% if @current_user.rounds.count > 0 %>
     <table border="0">

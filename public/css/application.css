@@ -48,6 +48,11 @@ header button {
   margin-right: 25%;
 }
 
+
+.statistics {
+  margin-top: 1%;
+}
+
 .alert {
   height: 3%;
   padding-bottom: 20px;
@@ -128,7 +133,6 @@ input[type='submit'], button {
 /* ================================
 ==             Table             ==
 =================================*/
-
 .statistics table td {
   margin: 10px;
 }
