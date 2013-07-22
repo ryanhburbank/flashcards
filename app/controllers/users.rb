@@ -25,7 +25,9 @@ get '/user/profile' do
 end
 
 post '/user/login' do
+  p params
    @current_user = User.authenticate(params[:email], params[:password])
+   debugger
   
   if @current_user
     session[:id]= @current_user.id
