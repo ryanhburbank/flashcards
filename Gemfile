@@ -20,7 +20,7 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
-gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'nokogiri'
 
 group :test, :development do
