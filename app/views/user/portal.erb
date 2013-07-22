@@ -1,53 +1,52 @@
-<h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1>
-<h4>|| <a href="/user/profile">Profile</a></h4>
-<br>
-<div class="statistics">
-  <% if @current_user.rounds.count > 0 %>
-    <table border="0">
-      <tr>
-        <td>Last Round Correct Guesses:</td>
-        <td class="stat"><%= @correct_guesses_last_round %></td>
-      </tr>
-      <tr>
-        <td>Last Round Incorrect Guesses: </td>
-        <td class="stat"><%= @incorrect_guesses_last_round %></td>
-      </tr>
-      <tr>
-        <td>Total Correct Guesses: </td>
-        <td class="stat"><%= @correct %></td>
-      </tr>
-      <tr>
-        <td>Total Incorrect Guesses:</td>
-        <td class="stat"><%= @incorrect %></td>
-      </tr>
-      <tr>
-        <td>Total Percentage Correct:</td>
-        <td class="stat"><%= @percentage %>%</td>
-      </tr>
-    </table>
-  <% end %>
-</div>
-
-<div id="my-deck">
-  <h3>My Decks</h3>
-  <ul>
-  <% @current_user.decks.each do |deck| %>
-    <li><%= deck.title %></li>
-  <% end %>
-    <li class="create-deck">
-  <a href="/deck/new">Create a New Deck</a>
-</div>
-</li>
-  </ul>
-</div>
-
-<div class="round-list">
-  <h3>Play A Round</h3>
-  <ul>
-    <% @decks.each do |deck| %>
-      <li><a href="/deck/<%= deck.id %>"><%= deck.title %></a></li>
+<div class="portal">
+  <h1><%= @current_user.first_name %> <%= @current_user.last_name %></h1>
+  <h4>|| <a href="/user/profile">Profile</a></h4>
+  <br>
+  <div class="statistics">
+    <% if @current_user.rounds.count > 0 %>
+      <table border="0">
+        <tr>
+          <td>Last Round Correct Guesses:</td>
+          <td class="stat"><%= @correct_guesses_last_round %></td>
+        </tr>
+        <tr>
+          <td>Last Round Incorrect Guesses: </td>
+          <td class="stat"><%= @incorrect_guesses_last_round %></td>
+        </tr>
+        <tr>
+          <td>Total Correct Guesses: </td>
+          <td class="stat"><%= @correct %></td>
+        </tr>
+        <tr>
+          <td>Total Incorrect Guesses:</td>
+          <td class="stat"><%= @incorrect %></td>
+        </tr>
+        <tr>
+          <td>Total Percentage Correct:</td>
+          <td class="stat"><%= @percentage %>%</td>
+        </tr>
+      </table>
     <% end %>
-  </ul>
+  </div>
+
+  <div id="my-deck">
+    <h3>My Decks</h3>
+    <ul>
+    <% @current_user.decks.each do |deck| %>
+      <li><%= deck.title %></li>
+    <% end %>
+      <li class="create-deck">
+    <a href="/deck/new">Create a New Deck</a>
+  </div>
+  </li>
+    </ul>
+
+  <div class="round-list">
+    <h3>Play A Round</h3>
+    <ul>
+      <% @decks.each do |deck| %>
+        <li><a href="/deck/<%= deck.id %>"><%= deck.title %></a></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
-
-
